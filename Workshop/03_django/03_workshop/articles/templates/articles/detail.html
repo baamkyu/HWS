@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{% for article in articles %}
+  <h1>DETAIL</h1>
+  <h1>{{article.pk}}번째 글</h1>
+  <hr>
+  <p>제목: {{article.title}}</p>
+  <p>내용: {{article.content}}</p>
+  <p>작성 시각:{{article.created_at}}</p>
+  <p>수정 시각:{{article.updated_at}}</p>
+  <hr>
+  <a href="{% url 'articles:edit' %}">EDIT</a>
+  <input type="delete" value="DELETE">
+  <a href="{% url 'articles:index' %}">[back]</a>
+{% endfor %}
+{% endblock content %}
