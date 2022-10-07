@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% block content %}
+  <h2>DETAIL</h2>
+  <hr>
+  <div style="text-align: center;">
+    <img src="{{ movie.poster_url }}" alt="이미지 없음" width="500" height="600">
+
+    <p>Title : {{ movie.title }}</p>
+    <p>Audience : {{ movie.audience }}</p>
+    <p>Release Dates : {{ movie.release_date }}</p>
+    <p>Genre : {{ movie.genre }}</p>
+    <p>Score : {{ movie.score }}</p>
+    <p>{{ movie.description }}</p>
+
+    <button type="button" class="btn btn-light">
+      <a href="{% url 'movies:index' %}" >BACK</a>
+    </button>
+
+    <a class="btn btn-primary" href="{% url 'movies:update' movie.pk %}" role="button">
+      UPDATE
+    </a>
+
+    <form action="{% url 'movies:delete' movie.pk %}">
+      <button type="submit" class="btn btn-danger">
+        DELETE
+      </button>
+    </form>
+  </div>
+{% endblock content %}
