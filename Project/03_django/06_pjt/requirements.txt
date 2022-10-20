@@ -1,3 +1,9 @@
+<<<<<<< HEAD
+asgiref==3.5.2
+Django==3.2.13
+pytz==2022.4
+sqlparse==0.4.3
+=======
 argon2-cffi==21.3.0
 argon2-cffi-bindings==21.2.0
 asgiref==3.5.2
@@ -72,3 +78,4 @@ traitlets==5.3.0
 urllib3==1.26.11
 wcwidth==0.2.5
 webencodings==0.5.1
+>>>>>>> d91e101d9b9fccd0ec02132f6b839b5d2dcb06bf

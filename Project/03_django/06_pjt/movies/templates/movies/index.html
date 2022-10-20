@@ -2,6 +2,15 @@
 
 {% block content %}
   <h1>INDEX</h1>
+<<<<<<< HEAD
+  <a class="btn btn-primary" href="{% url 'movies:create' %}" role="button">CREATE</a>
+  <hr>
+  {% for movie in movies %}
+      <a href="{% url 'movies:detail' movie.pk %}">{{ movie.title }} </a>
+      {{ movie.score }}
+      <hr>
+  {% endfor %}
+=======
   <a href="{% url 'movies:new' %}">[NEW]</a>
   <hr>
   {% for movie in movies %}
@@ -11,4 +20,5 @@
   {% endfor %}
 
 
+>>>>>>> d91e101d9b9fccd0ec02132f6b839b5d2dcb06bf
 {% endblock content %}
