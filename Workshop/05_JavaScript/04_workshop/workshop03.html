@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+
+  <body>
+    <form action="/todos/">
+      <input type="text" />
+      <button>Add</button>
+    </form>
+    <ul></ul>
+
+    <script>
+      /*
+    [필수사항]	
+      form에서 submit 이벤트가 발생되었을 때 input에 작성된 값이 todo로 추가된다.
+      todo는 ul 태그의 li 태그로 추가된다.
+      todo가 추가된 후 input value의 값은 초기화 된다.
+      
+      (선택) 빈 값인 데이터는 입력을 방지한다.
+      빈 값이면 알림창을 띄워 값을 입력하도록 안내한다.
+    */
+
+      // const ulTag = document.querySelector("ul"); // ul 태그 조회
+
+      const formTag = document.querySelector("form");
+
+      formTag.addEventListener("submit", (event) => {
+        event.preventDefault(); // submit특성인 GET방식을 꺼주는 함수 -> 이걸 해줘야 주소가 안 바뀜
+        const inputTag = document.querySelector("input");
+        const data = inputTag.value;
+
+        if (data.trim()) {
+          const liTag = document.createElement("li");
+          liTag.innerText = data;
+
+          const ulTag = document.querySelector("ul"); // ul 태그 조회
+          ulTag.appendChild(liTag); // ul태그 안에 li태그 넣어줌
+
+          event.target.reset(); // 다 작성하고 submit하면 값을 지워줌
+        } else {
+          alert("내용을 입력하세요.");
+        }
+      });
+
+      document.querySelector();
+    </script>
+  </body>
+</html>
